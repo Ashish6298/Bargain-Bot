@@ -1,0 +1,760 @@
+{
+  "iPhone 15": {
+    "Amazon": [
+      {
+        "date": "2025-02-27T04:09:28.197Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T04:13:06.339Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T04:13:24.752Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T04:13:48.853Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T04:49:53.431Z",
+        "price": "Error",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:24:20.221Z",
+        "price": "Error",
+        "link": "https://www.amazon.in/s?k=iPhone%2015"
+      },
+      {
+        "date": "2025-02-27T05:25:11.049Z",
+        "price": "Error",
+        "link": "https://www.amazon.in/s?k=iPhone%2015"
+      },
+      {
+        "date": "2025-02-27T05:25:35.496Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOorSQwf-ivGQ-BxZbWnlAcYjX9a7xxi6Vbm7aEC6xe8VwCAJAC1bm0g&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:54:06.885Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T06:55:15.091Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T06:55:39.337Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:01:01.891Z",
+        "price": "₹64900"
+      }
+    ],
+    "Flipkart": [
+      {
+        "date": "2025-02-27T04:49:53.443Z",
+        "price": "Error",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:24:20.235Z",
+        "price": "Error",
+        "link": "https://www.flipkart.com/search?q=iPhone%2015"
+      },
+      {
+        "date": "2025-02-27T05:25:11.050Z",
+        "price": "₹34999",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:25:35.497Z",
+        "price": "₹74900",
+        "link": "http://www.flipkart.com/apple-iphone-16-pink-128-gb/p/itmc2e910b4d0b1c?pid=MOBH4DQFWJVDRSHM&lid=LSTMOBH4DQFWJVDRSHMLKOVNG&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:54:06.957Z",
+        "price": "₹226"
+      },
+      {
+        "date": "2025-02-27T06:55:15.163Z",
+        "price": "₹226"
+      },
+      {
+        "date": "2025-02-27T06:55:39.410Z",
+        "price": "₹226"
+      },
+      {
+        "date": "2025-02-27T07:01:02.059Z",
+        "price": "₹226"
+      }
+    ],
+    "Croma": [
+      {
+        "date": "2025-02-27T04:49:53.443Z",
+        "price": "Error",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:24:20.235Z",
+        "price": "Error",
+        "link": "https://www.croma.com/search/?q=iPhone%2015"
+      },
+      {
+        "date": "2025-02-27T05:25:11.050Z",
+        "price": "₹34999",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:25:35.497Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-yellow-/p/300825?srsltid=AfmBOooNEVGe9NdOE3mfw4Kke2FlZHwi0TW77XTu5dasnR4IdLj-54Ifb-w&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:55:15.239Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T06:55:39.476Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:01:02.183Z",
+        "price": "₹64900"
+      }
+    ],
+    "Reliance Digital": [
+      {
+        "date": "2025-02-27T04:49:53.443Z",
+        "price": "Error",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:24:20.235Z",
+        "price": "Error",
+        "link": "https://www.reliancedigital.in/search?q=iPhone%2015"
+      },
+      {
+        "date": "2025-02-27T05:25:11.050Z",
+        "price": "₹34999",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:25:35.497Z",
+        "price": "₹64900",
+        "link": "https://www.reliancedigital.in/apple-iphone-15-128gb-blue/p/493839312"
+      },
+      {
+        "date": "2025-02-27T06:55:15.332Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T06:55:39.550Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:01:02.260Z",
+        "price": "₹64900"
+      }
+    ]
+  },
+  "Iphone 15": {
+    "Amazon": [
+      {
+        "date": "2025-02-27T06:00:26.457Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOooQ877cRrIJDZPo5R_LnnqpmP_l66ok8FAAH1HPDPN6geVL3EcdXkk&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:03:31.561Z",
+        "price": "₹82900",
+        "link": "https://www.amazon.in/iPhone-16-256-GB-Control/dp/B0DGJ3NWM4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T06:04:16.360Z",
+        "price": "₹82900",
+        "link": "https://www.amazon.in/iPhone-16-256-GB-Control/dp/B0DGJ3NWM4?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T06:08:53.746Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T06:11:22.324Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOooQ877cRrIJDZPo5R_LnnqpmP_l66ok8FAAH1HPDPN6geVL3EcdXkk&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:11:32.502Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOooQ877cRrIJDZPo5R_LnnqpmP_l66ok8FAAH1HPDPN6geVL3EcdXkk&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:12:16.284Z",
+        "price": "₹1899",
+        "link": "https://www.amazon.in/fusegear-iphone-Case-Scratch-Resistant-Anti-fingerprint/dp/B0CSFMXC63?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1ZX4LI3468UH4"
+      },
+      {
+        "date": "2025-02-27T06:21:31.568Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOooQ877cRrIJDZPo5R_LnnqpmP_l66ok8FAAH1HPDPN6geVL3EcdXkk&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:27:05.662Z",
+        "price": "₹1899",
+        "link": "https://www.amazon.in/fusegear-iphone-Case-Scratch-Resistant-Anti-fingerprint/dp/B0CSFMXC63?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1ZX4LI3468UH4"
+      },
+      {
+        "date": "2025-02-27T06:38:27.042Z",
+        "discountedPrice": "₹64900",
+        "finalPrice": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOoqYo0hG4BFPQSBzfUK2myYWxiRWcxg93_c3jwvfw8GxEsXb8XqN5Rc&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T07:08:59.935Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:14:10.256Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:14:28.941Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:17:04.324Z",
+        "price": 64900
+      },
+      {
+        "date": "2025-02-27T07:17:29.869Z",
+        "price": 64900
+      }
+    ],
+    "Flipkart": [
+      {
+        "date": "2025-02-27T06:00:26.470Z",
+        "price": "₹74900",
+        "link": "http://www.flipkart.com/apple-iphone-16-pink-128-gb/p/itmc2e910b4d0b1c?pid=MOBH4DQFWJVDRSHM&lid=LSTMOBH4DQFWJVDRSHMLKOVNG&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:03:31.574Z",
+        "price": "₹239",
+        "link": "http://www.flipkart.com/flipkart-smartbuy-back-cover-apple-iphone-15-iphone-15/p/itmb2f28b44484d2?pid=ACCGTGB9XPZZHNQG&lid=LSTACCGTGB9XPZZHNQGOVKRME&marketplace=FLIPKART&cmpid=content_cases-covers_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:04:16.372Z",
+        "price": "₹239",
+        "link": "http://www.flipkart.com/flipkart-smartbuy-back-cover-apple-iphone-15-iphone-15/p/itmb2f28b44484d2?pid=ACCGTGB9XPZZHNQG&lid=LSTACCGTGB9XPZZHNQGOVKRME&marketplace=FLIPKART&cmpid=content_cases-covers_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:08:53.747Z",
+        "price": "₹74900",
+        "link": "http://www.flipkart.com/apple-iphone-16-pink-128-gb/p/itmc2e910b4d0b1c?pid=MOBH4DQFWJVDRSHM&lid=LSTMOBH4DQFWJVDRSHMLKOVNG&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:11:22.325Z",
+        "price": "₹74900",
+        "link": "http://www.flipkart.com/apple-iphone-16-pink-128-gb/p/itmc2e910b4d0b1c?pid=MOBH4DQFWJVDRSHM&lid=LSTMOBH4DQFWJVDRSHMLKOVNG&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:11:32.502Z",
+        "price": "₹74900",
+        "link": "http://www.flipkart.com/apple-iphone-16-pink-128-gb/p/itmc2e910b4d0b1c?pid=MOBH4DQFWJVDRSHM&lid=LSTMOBH4DQFWJVDRSHMLKOVNG&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:12:16.285Z",
+        "price": "₹68999",
+        "link": "http://www.flipkart.com/apple-iphone-15-plus-pink-128-gb/p/itm7579ed94ca647?pid=MOBGTAGPXUWEXXWY&lid=LSTMOBGTAGPXUWEXXWYKVXCUT&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:21:31.570Z",
+        "price": "₹74900",
+        "link": "http://www.flipkart.com/apple-iphone-16-pink-128-gb/p/itmc2e910b4d0b1c?pid=MOBH4DQFWJVDRSHM&lid=LSTMOBH4DQFWJVDRSHMLKOVNG&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:27:05.676Z",
+        "price": "₹68999",
+        "link": "http://www.flipkart.com/apple-iphone-15-plus-pink-128-gb/p/itm7579ed94ca647?pid=MOBGTAGPXUWEXXWY&lid=LSTMOBGTAGPXUWEXXWYKVXCUT&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T06:38:27.055Z",
+        "discountedPrice": "₹74900",
+        "finalPrice": "₹74900",
+        "link": "http://www.flipkart.com/apple-iphone-16-pink-128-gb/p/itmc2e910b4d0b1c?pid=MOBH4DQFWJVDRSHM&lid=LSTMOBH4DQFWJVDRSHMLKOVNG&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T07:09:00.082Z",
+        "price": "₹74900"
+      },
+      {
+        "date": "2025-02-27T07:14:10.440Z",
+        "price": "₹74900"
+      },
+      {
+        "date": "2025-02-27T07:14:29.044Z",
+        "price": "₹74900"
+      },
+      {
+        "date": "2025-02-27T07:17:04.426Z",
+        "price": 74900
+      },
+      {
+        "date": "2025-02-27T07:17:29.971Z",
+        "price": 74900
+      }
+    ],
+    "Croma": [
+      {
+        "date": "2025-02-27T06:00:26.470Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-yellow-/p/300825?srsltid=AfmBOooRjsQyAF-IXvRbyojHs0-PGou6ENvcxJI44kS9i-2Ar-yo9IT3eyo&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:03:31.574Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOoqAOJdIbM0Td7igGp6dWwAzX4qF5Q2n2ZfQ2zO7tfPrgy75m8HgHhI&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:04:16.372Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-pink-/p/300679?srsltid=AfmBOoqAOJdIbM0Td7igGp6dWwAzX4qF5Q2n2ZfQ2zO7tfPrgy75m8HgHhI&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:08:53.747Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-yellow-/p/300825?srsltid=AfmBOooRjsQyAF-IXvRbyojHs0-PGou6ENvcxJI44kS9i-2Ar-yo9IT3eyo&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:11:22.325Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-yellow-/p/300825?srsltid=AfmBOooRjsQyAF-IXvRbyojHs0-PGou6ENvcxJI44kS9i-2Ar-yo9IT3eyo&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:11:32.502Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-yellow-/p/300825?srsltid=AfmBOooRjsQyAF-IXvRbyojHs0-PGou6ENvcxJI44kS9i-2Ar-yo9IT3eyo&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:12:16.285Z",
+        "price": "₹134900",
+        "link": "https://www.croma.com/apple-iphone-15-pro-max-256gb-blue-titanium-/p/300822?srsltid=AfmBOorBFPwibKvK9HpBw80Ya-HU9jfbeMUrSPC3vcIXcr6Rd4BE6ucKcX0&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:21:31.570Z",
+        "price": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-yellow-/p/300825?srsltid=AfmBOooRjsQyAF-IXvRbyojHs0-PGou6ENvcxJI44kS9i-2Ar-yo9IT3eyo&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:27:05.676Z",
+        "price": "₹134900",
+        "link": "https://www.croma.com/apple-iphone-15-pro-max-256gb-blue-titanium-/p/300822?srsltid=AfmBOorBFPwibKvK9HpBw80Ya-HU9jfbeMUrSPC3vcIXcr6Rd4BE6ucKcX0&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T06:38:27.055Z",
+        "discountedPrice": "₹64900",
+        "finalPrice": "₹64900",
+        "link": "https://www.croma.com/apple-iphone-15-128gb-yellow-/p/300825?srsltid=AfmBOopRM7bgMb7tY5bSlXgw_x4Zn-9VPLyRrW3P72Xlh0y4j0AuuG0FIlw&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T07:09:00.189Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:14:10.715Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:14:29.152Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:17:04.537Z",
+        "price": 64900
+      },
+      {
+        "date": "2025-02-27T07:17:30.081Z",
+        "price": 64900
+      }
+    ],
+    "Reliance Digital": [
+      {
+        "date": "2025-02-27T06:00:26.470Z",
+        "price": "₹64900",
+        "link": "https://www.reliancedigital.in/apple-iphone-15-128gb-blue/p/493839312"
+      },
+      {
+        "date": "2025-02-27T06:03:31.574Z",
+        "price": "₹34999",
+        "link": "https://x-buy.in/product/apple-iphone-15-128-gb-blue/"
+      },
+      {
+        "date": "2025-02-27T06:04:16.372Z",
+        "price": "₹34999",
+        "link": "https://x-buy.in/product/apple-iphone-15-128-gb-blue/"
+      },
+      {
+        "date": "2025-02-27T06:08:53.747Z",
+        "price": "₹64900",
+        "link": "https://www.reliancedigital.in/apple-iphone-15-128gb-blue/p/493839312"
+      },
+      {
+        "date": "2025-02-27T06:11:22.325Z",
+        "price": "₹64900",
+        "link": "https://www.reliancedigital.in/apple-iphone-15-128gb-blue/p/493839312"
+      },
+      {
+        "date": "2025-02-27T06:11:32.502Z",
+        "price": "₹64900",
+        "link": "https://www.reliancedigital.in/apple-iphone-15-128gb-blue/p/493839312"
+      },
+      {
+        "date": "2025-02-27T06:12:16.285Z",
+        "price": "₹34999",
+        "link": "https://x-buy.in/product/apple-iphone-15-128-gb-blue/"
+      },
+      {
+        "date": "2025-02-27T06:21:31.570Z",
+        "price": "₹64900",
+        "link": "https://www.reliancedigital.in/apple-iphone-15-128gb-blue/p/493839312"
+      },
+      {
+        "date": "2025-02-27T06:27:05.676Z",
+        "price": "₹34999",
+        "link": "https://x-buy.in/product/apple-iphone-15-128-gb-blue/"
+      },
+      {
+        "date": "2025-02-27T06:38:27.055Z",
+        "discountedPrice": "₹64900",
+        "finalPrice": "₹64900",
+        "link": "https://www.reliancedigital.in/apple-iphone-15-128gb-blue/p/493839312"
+      },
+      {
+        "date": "2025-02-27T07:09:00.275Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:14:10.807Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:14:29.253Z",
+        "price": "₹64900"
+      },
+      {
+        "date": "2025-02-27T07:17:04.649Z",
+        "price": 64900
+      },
+      {
+        "date": "2025-02-27T07:17:30.157Z",
+        "price": 64900
+      }
+    ]
+  },
+  "Playstation 5": {
+    "Amazon": [
+      {
+        "date": "2025-02-27T04:10:18.037Z",
+        "price": "₹54990"
+      },
+      {
+        "date": "2025-02-27T04:10:33.851Z",
+        "price": "₹54990"
+      },
+      {
+        "date": "2025-02-27T04:10:43.791Z",
+        "price": "₹54990"
+      }
+    ]
+  },
+  "iPhone 14": {
+    "Amazon": [
+      {
+        "date": "2025-02-27T04:29:43.081Z",
+        "price": "₹38999"
+      },
+      {
+        "date": "2025-02-27T04:45:06.581Z",
+        "price": "₹38999",
+        "link": "https://ovantica.com/buy-refurbished-iphones/renewed-iphone-14/7599?srsltid=AfmBOoqHV56JUlhIkoiliUUrXj967DtRU-tNHB3MT3eEkBY7ckS97szpae0"
+      },
+      {
+        "date": "2025-02-27T05:08:33.880Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T05:30:40.364Z",
+        "price": "₹54400"
+      },
+      {
+        "date": "2025-02-27T05:31:15.316Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T05:31:35.041Z",
+        "price": "₹54400"
+      },
+      {
+        "date": "2025-02-27T05:31:51.327Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T05:32:13.360Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T05:32:22.514Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      }
+    ],
+    "Flipkart": [
+      {
+        "date": "2025-02-27T04:29:43.082Z",
+        "price": "₹54999"
+      },
+      {
+        "date": "2025-02-27T04:45:06.582Z",
+        "price": "₹54999",
+        "link": "http://www.flipkart.com/apple-iphone-14-starlight-128-gb/p/itmc922ddc8af349?pid=MOBGHWFHABH3G73H&lid=LSTMOBGHWFHABH3G73H644UNJ&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T05:08:33.894Z",
+        "price": "₹53490",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:30:40.365Z",
+        "price": "₹54999"
+      },
+      {
+        "date": "2025-02-27T05:31:15.316Z",
+        "price": "₹54999",
+        "link": "http://www.flipkart.com/apple-iphone-14-starlight-128-gb/p/itmc922ddc8af349?pid=MOBGHWFHABH3G73H&lid=LSTMOBGHWFHABH3G73H644UNJ&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T05:31:35.041Z",
+        "price": "₹54999"
+      },
+      {
+        "date": "2025-02-27T05:31:51.327Z",
+        "price": "₹54999",
+        "link": "http://www.flipkart.com/apple-iphone-14-starlight-128-gb/p/itmc922ddc8af349?pid=MOBGHWFHABH3G73H&lid=LSTMOBGHWFHABH3G73H644UNJ&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      },
+      {
+        "date": "2025-02-27T05:32:13.360Z",
+        "price": "₹53490",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:32:22.514Z",
+        "price": "₹54999",
+        "link": "http://www.flipkart.com/apple-iphone-14-starlight-128-gb/p/itmc922ddc8af349?pid=MOBGHWFHABH3G73H&lid=LSTMOBGHWFHABH3G73H644UNJ&marketplace=FLIPKART&cmpid=content_mobile_8965229628_gmc"
+      }
+    ],
+    "Croma": [
+      {
+        "date": "2025-02-27T04:29:43.082Z",
+        "price": "₹53490"
+      },
+      {
+        "date": "2025-02-27T04:45:06.582Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOooyF7hVpMIrznmP79w4V5Kx1Kn61YqjOvDcYRm2BdUdoR_Fdaio_ps&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T05:08:33.894Z",
+        "price": "₹53490",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:30:40.365Z",
+        "price": "₹53490"
+      },
+      {
+        "date": "2025-02-27T05:31:15.316Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOoqn0NLyacIJf2N-7syHyFtneJBhCJiZ59pgP77ihkEgFO8anbAd6wU&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T05:31:35.041Z",
+        "price": "₹53490"
+      },
+      {
+        "date": "2025-02-27T05:31:51.327Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOoqn0NLyacIJf2N-7syHyFtneJBhCJiZ59pgP77ihkEgFO8anbAd6wU&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T05:32:13.360Z",
+        "price": "₹53490",
+        "link": "N/A"
+      },
+      {
+        "date": "2025-02-27T05:32:22.514Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOoqn0NLyacIJf2N-7syHyFtneJBhCJiZ59pgP77ihkEgFO8anbAd6wU&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      }
+    ],
+    "Reliance Digital": [
+      {
+        "date": "2025-02-27T04:29:43.082Z",
+        "price": "₹53490"
+      },
+      {
+        "date": "2025-02-27T04:45:06.582Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOoohRAzMNnwTIUzH1xVBcm42QIidBBhjnsqaekbX4JeUuRGgENLEBdY&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T05:08:33.894Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T05:30:40.365Z",
+        "price": "₹53490"
+      },
+      {
+        "date": "2025-02-27T05:31:15.316Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOooGLTRaqg6q6teoOSKVauswLy8-vG9k4jpZI5lvFFvst58rai8TpDg&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T05:31:35.041Z",
+        "price": "₹53490"
+      },
+      {
+        "date": "2025-02-27T05:31:51.327Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOooGLTRaqg6q6teoOSKVauswLy8-vG9k4jpZI5lvFFvst58rai8TpDg&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      },
+      {
+        "date": "2025-02-27T05:32:13.360Z",
+        "price": "₹54400",
+        "link": "https://www.amazon.in/Apple-iPhone-14-128GB-Starlight/dp/B0BDK8LKPJ?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=AJ6SIZC8YQDZX"
+      },
+      {
+        "date": "2025-02-27T05:32:22.514Z",
+        "price": "₹53490",
+        "link": "https://www.croma.com/apple-iphone-14-128gb-purple-/p/261932?srsltid=AfmBOooGLTRaqg6q6teoOSKVauswLy8-vG9k4jpZI5lvFFvst58rai8TpDg&com_cvv=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e"
+      }
+    ]
+  },
+  "iPhone 13": {
+    "Amazon": [
+      {
+        "date": "2025-02-27T04:51:44.474Z",
+        "price": "Error",
+        "link": "N/A"
+      }
+    ],
+    "Flipkart": [
+      {
+        "date": "2025-02-27T04:51:44.486Z",
+        "price": "Error",
+        "link": "N/A"
+      }
+    ],
+    "Croma": [
+      {
+        "date": "2025-02-27T04:51:44.486Z",
+        "price": "Error",
+        "link": "N/A"
+      }
+    ],
+    "Reliance Digital": [
+      {
+        "date": "2025-02-27T04:51:44.486Z",
+        "price": "Error",
+        "link": "N/A"
+      }
+    ]
+  },
+  "iPhone 16": {
+    "Amazon": [
+      {
+        "date": "2025-02-27T05:13:59.266Z",
+        "price": "Error",
+        "link": "https://www.amazon.in/s?k=iPhone%2016"
+      },
+      {
+        "date": "2025-02-27T07:01:10.552Z",
+        "price": "₹79900"
+      },
+      {
+        "date": "2025-02-27T07:01:50.694Z",
+        "price": "₹79900"
+      },
+      {
+        "date": "2025-02-27",
+        "price": 79900
+      }
+    ],
+    "Flipkart": [
+      {
+        "date": "2025-02-27T05:13:59.280Z",
+        "price": "Error",
+        "link": "https://www.flipkart.com/search?q=iPhone%2016"
+      },
+      {
+        "date": "2025-02-27T07:01:13.652Z",
+        "price": "₹74900"
+      },
+      {
+        "date": "2025-02-27T07:01:50.786Z",
+        "price": "₹74900"
+      },
+      {
+        "date": "2025-02-27",
+        "price": 74900
+      }
+    ],
+    "Croma": [
+      {
+        "date": "2025-02-27T05:13:59.280Z",
+        "price": "Error",
+        "link": "https://www.croma.com/search/?q=iPhone%2016"
+      },
+      {
+        "date": "2025-02-27T07:01:18.192Z",
+        "price": "₹84900"
+      },
+      {
+        "date": "2025-02-27T07:01:50.875Z",
+        "price": "₹84900"
+      }
+    ],
+    "Reliance Digital": [
+      {
+        "date": "2025-02-27T05:13:59.280Z",
+        "price": "Error",
+        "link": "https://www.reliancedigital.in/search?q=iPhone%2016"
+      },
+      {
+        "date": "2025-02-27T07:01:22.499Z",
+        "price": "₹70190"
+      },
+      {
+        "date": "2025-02-27T07:01:50.957Z",
+        "price": "₹70190"
+      }
+    ]
+  },
+  "Iphone 14": {
+    "Amazon": [
+      {
+        "date": "2025-02-27",
+        "price": 54400
+      }
+    ]
+  }
+}

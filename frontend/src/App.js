@@ -1,3 +1,5 @@
+// app.js
+
 import React, { useState } from "react";
 import axios from "axios";
 import {
@@ -15,14 +17,25 @@ import {
   Menu,
   MenuItem,
   Avatar,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Link,
 } from "@mui/material";
-import { GitHub, LinkedIn, Info } from "@mui/icons-material";
+import { GitHub, LinkedIn, Info, History } from "@mui/icons-material";
 
 const App = () => {
   const [query, setQuery] = useState("");
   const [prices, setPrices] = useState(null);
   const [loading, setLoading] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [historyDialogOpen, setHistoryDialogOpen] = useState(false);
+  const [selectedStoreHistory, setSelectedStoreHistory] = useState(null);
   const isSmallScreen = useMediaQuery("(max-width:600px)");
 
   const handleSearch = async () => {
@@ -49,6 +62,29 @@ const App = () => {
     setAnchorEl(null);
   };
 
+  const handleHistoryOpen = (store) => {
+    setSelectedStoreHistory(prices[store].priceHistory);
+    setHistoryDialogOpen(true);
+  };
+
+  const handleHistoryClose = () => {
+    setHistoryDialogOpen(false);
+    setSelectedStoreHistory(null);
+  };
+
+  // Find the store with the lowest final price
+  const getLowestPriceStore = () => {
+    if (!prices) return null;
+    const stores = Object.keys(prices);
+    return stores.reduce((minStore, store) => {
+      const currentPrice = parseFloat(prices[store].currentPrice.finalPrice.replace("₹", ""));
+      const minPrice = parseFloat(prices[minStore].currentPrice.finalPrice.replace("₹", ""));
+      return currentPrice < minPrice ? store : minStore;
+    }, stores[0]);
+  };
+
+  const lowestPriceStore = prices ? getLowestPriceStore() : null;
+
   return (
     <Box
       sx={{
@@ -57,10 +93,9 @@ const App = () => {
         justifyContent: "center",
         alignItems: "center",
         padding: 3,
-        background: "linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%)", // Light Indigo Gradient
+        background: "linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%)",
       }}
     >
-      {/* About Button */}
       <IconButton
         sx={{ position: "absolute", top: 10, right: 10 }}
         onClick={handleMenuOpen}
@@ -75,7 +110,7 @@ const App = () => {
       >
         <MenuItem>
           <Avatar
-            src="/assets/ashish.jpg" // Replace with your image URL
+            src="/assets/ashish.jpg"
             sx={{ width: 60, height: 60, margin: "auto" }}
           />
         </MenuItem>
@@ -111,17 +146,16 @@ const App = () => {
           gutterBottom
           sx={{
             fontWeight: "bold",
-            color: "#000", // Black text color
-            textShadow: "0 0 10px rgba(0,0,0,0.3)", // Subtle shadow for depth
-            fontFamily: "'Poppins', sans-serif", // Stylish font
-            letterSpacing: "1px", // Slight spacing for a modern look
+            color: "#000",
+            textShadow: "0 0 10px rgba(0,0,0,0.3)",
+            fontFamily: "'Poppins', sans-serif",
+            letterSpacing: "1px",
           }}
         >
           🤖 Bargain Bot !
         </Typography>
 
         <Box display="flex" flexDirection="column" alignItems="center">
-          {/* Search Input Field */}
           <TextField
             fullWidth
             label="Search for the Best Price"
@@ -131,19 +165,17 @@ const App = () => {
             sx={{
               mb: 2,
               maxWidth: "600px",
-              bgcolor: "rgba(255, 255, 255, 0.7)", // Lighter background for better contrast
-              borderRadius: 2, // More rounded corners
+              bgcolor: "rgba(255, 255, 255, 0.7)",
+              borderRadius: 2,
               "& input": {
-                color: "#000", // Black text for better readability
-                fontFamily: "'Poppins', sans-serif", // Stylish font
+                color: "#000",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: "500",
               },
               "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "rgba(0, 0, 0, 0.4)", // Subtle black border
-                },
-                "&:hover fieldset": { borderColor: "#2196F3" }, // Light blue hover effect
-                "&.Mui-focused fieldset": { borderColor: "#1976D2" }, // Darker blue when focused
+                "& fieldset": { borderColor: "rgba(0, 0, 0, 0.4)" },
+                "&:hover fieldset": { borderColor: "#2196F3" },
+                "&.Mui-focused fieldset": { borderColor: "#1976D2" },
               },
             }}
             InputLabelProps={{
@@ -151,11 +183,10 @@ const App = () => {
                 color: "#333",
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: "500",
-              }, // Stylish black label
+              },
             }}
           />
 
-          {/* Search Button */}
           <Button
             variant="contained"
             fullWidth
@@ -167,14 +198,14 @@ const App = () => {
               fontSize: "1.1rem",
               fontWeight: "bold",
               fontFamily: "'Poppins', sans-serif",
-              bgcolor: "#2196F3", // Light Sky Blue Button
-              color: "#fff", // White text
+              bgcolor: "#2196F3",
+              color: "#fff",
               borderRadius: 2,
               textTransform: "uppercase",
               transition: "all 0.3s ease-in-out",
-              boxShadow: "0px 4px 15px rgba(33, 150, 243, 0.4)", // Soft blue glow
+              boxShadow: "0px 4px 15px rgba(33, 150, 243, 0.4)",
               "&:hover": {
-                bgcolor: "#1976D2", // Darker blue on hover
+                bgcolor: "#1976D2",
                 transform: "scale(1.05)",
                 boxShadow: "0px 6px 20px rgba(25, 118, 210, 0.6)",
               },
@@ -188,19 +219,18 @@ const App = () => {
           </Button>
         </Box>
 
-          {loading && (
-            <Typography
-              align="center"
-              sx={{
-                color: "black",
-                fontSize: "1.2rem",
-                // fontStyle: "italic",
-                mt: 2,
-              }}
-            >
-              🔍 We are searching for the best deals for you...!
-            </Typography>
-          )}
+        {loading && (
+          <Typography
+            align="center"
+            sx={{
+              color: "black",
+              fontSize: "1.2rem",
+              mt: 2,
+            }}
+          >
+            🔍 We are searching for the best deals for you...!
+          </Typography>
+        )}
         {prices && (
           <Grid
             container
@@ -217,19 +247,19 @@ const App = () => {
               <Grid item xs={12} sm={6} md={4} lg={3} key={store}>
                 <Card
                   sx={{
-                    bgcolor: "rgba(255, 255, 255, 0.9)", // More solid background for better visibility
+                    bgcolor: store === lowestPriceStore ? "rgba(0, 255, 0, 0.1)" : "rgba(255, 255, 255, 0.9)",
+                    border: store === lowestPriceStore ? "2px solid #4CAF50" : "none",
                     borderRadius: 3,
                     padding: 2,
                     transition: "all 0.3s ease-in-out",
-                    boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.4)", // Darker shadow for depth
+                    boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.4)",
                     "&:hover": {
                       transform: "scale(1.05)",
-                      boxShadow: "0px 12px 30px rgba(0, 0, 0, 0.6)", // Stronger hover effect
+                      boxShadow: "0px 12px 30px rgba(0, 0, 0, 0.6)",
                     },
                   }}
                 >
                   <CardContent>
-                    {/* Store Name */}
                     <Typography
                       variant="h6"
                       sx={{
@@ -241,7 +271,6 @@ const App = () => {
                       {store}
                     </Typography>
 
-                    {/* Price Details with Improved Visibility */}
                     <Grid container spacing={1} sx={{ mt: 1 }}>
                       <Grid
                         item
@@ -261,7 +290,7 @@ const App = () => {
                           variant="body1"
                           sx={{ fontWeight: "bold", color: "#D32F2F" }}
                         >
-                          {prices[store].discountedPrice}
+                          {prices[store].currentPrice.discountedPrice}
                         </Typography>
                       </Grid>
 
@@ -280,7 +309,7 @@ const App = () => {
                           Original Price:
                         </Typography>
                         <Typography variant="body1">
-                          {prices[store].originalPrice}
+                          {prices[store].currentPrice.originalPrice}
                         </Typography>
                       </Grid>
 
@@ -299,30 +328,10 @@ const App = () => {
                           Discount:
                         </Typography>
                         <Typography variant="body1">
-                          {prices[store].discount}
+                          {prices[store].currentPrice.discount}
                         </Typography>
                       </Grid>
 
-                      <Grid
-                        item
-                        xs={12}
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography
-                          variant="body1"
-                          sx={{ fontWeight: "bold", color: "#333" }}
-                        >
-                          Card Discount:
-                        </Typography>
-                        <Typography variant="body1">
-                          {prices[store].cardDiscount}
-                        </Typography>
-                      </Grid>
-
-                      {/* Final Price Section */}
                       <Grid
                         item
                         xs={12}
@@ -332,7 +341,7 @@ const App = () => {
                           justifyContent: "space-between",
                           mt: 1,
                           p: 1,
-                          bgcolor: "rgba(0, 200, 0, 0.3)", // More visible green background
+                          bgcolor: "rgba(0, 200, 0, 0.3)",
                           borderRadius: 1,
                         }}
                       >
@@ -346,8 +355,48 @@ const App = () => {
                           variant="h6"
                           sx={{ fontWeight: "bold", color: "green" }}
                         >
-                          {prices[store].finalPrice}
+                          {prices[store].currentPrice.finalPrice}
                         </Typography>
+                      </Grid>
+
+                      <Grid item xs={12} sx={{ textAlign: "center", mt: 2 }}>
+                        <Link
+                          href={prices[store].currentPrice.productLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            fontFamily: "'Poppins', sans-serif",
+                            color: "#1976D2",
+                            textDecoration: "none",
+                            fontWeight: "bold",
+                            "&:hover": {
+                              color: "#D32F2F",
+                              textDecoration: "underline",
+                            },
+                          }}
+                        >
+                          Visit Product Page
+                        </Link>
+                      </Grid>
+
+                      <Grid item xs={12} sx={{ textAlign: "center", mt: 2 }}>
+                        <Button
+                          variant="outlined"
+                          startIcon={<History />}
+                          onClick={() => handleHistoryOpen(store)}
+                          sx={{
+                            fontFamily: "'Poppins', sans-serif",
+                            color: "#1976D2",
+                            borderColor: "#1976D2",
+                            "&:hover": {
+                              bgcolor: "#1976D2",
+                              color: "#fff",
+                              borderColor: "#1976D2",
+                            },
+                          }}
+                        >
+                          Price History
+                        </Button>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -356,6 +405,41 @@ const App = () => {
             ))}
           </Grid>
         )}
+
+        <Dialog
+          open={historyDialogOpen}
+          onClose={handleHistoryClose}
+          maxWidth="md"
+          fullWidth
+        >
+          <DialogTitle sx={{ bgcolor: "#1976D2", color: "#fff" }}>
+            Price History
+          </DialogTitle>
+          <DialogContent>
+            {selectedStoreHistory && (
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell sx={{ fontWeight: "bold" }}>Date</TableCell>
+                    <TableCell sx={{ fontWeight: "bold" }}>Discounted Price</TableCell>
+                    <TableCell sx={{ fontWeight: "bold" }}>Original Price</TableCell>
+                    <TableCell sx={{ fontWeight: "bold" }}>Final Price</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {selectedStoreHistory.map((entry, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{entry.date}</TableCell>
+                      <TableCell>{entry.discountedPrice}</TableCell>
+                      <TableCell>{entry.originalPrice}</TableCell>
+                      <TableCell>{entry.finalPrice}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            )}
+          </DialogContent>
+        </Dialog>
       </Container>
     </Box>
   );

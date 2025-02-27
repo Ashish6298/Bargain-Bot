@@ -1,3 +1,5 @@
+// server.js (unchanged except for the import, included for completeness)
+
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
