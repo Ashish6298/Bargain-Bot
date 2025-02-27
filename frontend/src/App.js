@@ -45,7 +45,63 @@ const App = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/compare?query=${query}`
+        `https://bargain-bot.onrender.com// Add a loading indicator for the price history dialog
+<Dialog
+  open={historyDialogOpen}
+  onClose={handleHistoryClose}
+  maxWidth="md"
+  fullWidth
+>
+  <DialogTitle sx={{ bgcolor: "#1976D2", color: "#fff" }}>
+    Price History
+  </DialogTitle>
+  <DialogContent>
+    {selectedStoreHistory ? (
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell sx={{ fontWeight: "bold" }}>Date</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Discounted Price</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Original Price</TableCell>
+            <TableCell sx={{ fontWeight: "bold" }}>Final Price</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {selectedStoreHistory.map((entry, index) => (
+            <TableRow key={index}>
+              <TableCell>{entry.date}</TableCell>
+              <TableCell>{entry.discountedPrice}</TableCell>
+              <TableCell>{entry.originalPrice}</TableCell>
+              <TableCell>{entry.finalPrice}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    ) : (
+      <CircularProgress />
+    )}
+  </DialogContent>
+</Dialog>
+
+// Add a loading state for the price history dialog
+const [historyLoading, setHistoryLoading] = useState(false);
+
+// Update the handleHistoryOpen function to set the loading state
+const handleHistoryOpen = (store) => {
+  setHistoryLoading(true);
+  setSelectedStoreHistory(prices[store].priceHistory);
+  setHistoryDialogOpen(true);
+  setTimeout(() => {
+    setHistoryLoading(false);
+  }, 1000);
+};
+
+// Update the handleHistoryClose function to reset the loading state
+const handleHistoryClose = () => {
+  setHistoryDialogOpen(false);
+  setSelectedStoreHistory(null);
+  setHistoryLoading(false);
+};/api/compare?query=${query}`
       );
       setPrices(response.data.prices);
     } catch (error) {
@@ -72,7 +128,6 @@ const App = () => {
     setSelectedStoreHistory(null);
   };
 
-  // Find the store with the lowest final price
   const getLowestPriceStore = () => {
     if (!prices) return null;
     const stores = Object.keys(prices);
@@ -106,27 +161,53 @@ const App = () => {
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
-        sx={{ mt: 1 }}
+        anchorOrigin={{
+          vertical: "bottom", // Expand downward
+          horizontal: "center", // Anchor to center of the icon
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "center", // Open centered below the icon
+        }}
+        sx={{
+          "& .MuiPaper-root": {
+            width: "60px",
+            bgcolor: "rgba(255, 255, 255, 0.9)",
+            borderRadius: "8px",
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: 0,
+            zIndex: 1301, // Higher than default (1300) to stay above content
+          },
+          "& .MuiMenu-list": {
+            padding: 0,
+          },
+        }}
+        disableScrollLock // Prevents body scroll locking, which can help with responsiveness
       >
-        <MenuItem>
+        <MenuItem sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}>
           <Avatar
             src="/assets/ashish.jpg"
-            sx={{ width: 60, height: 60, margin: "auto" }}
+            sx={{ width: 40, height: 40 }}
           />
         </MenuItem>
         <MenuItem
           component="a"
           href="https://github.com/ashish6298"
           target="_blank"
+          sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}
         >
-          <GitHub sx={{ marginRight: 1 }} /> GitHub
+          <GitHub />
         </MenuItem>
         <MenuItem
           component="a"
           href="https://www.linkedin.com/in/ashish-goswami-58797a24a/"
           target="_blank"
+          sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}
         >
-          <LinkedIn sx={{ marginRight: 1 }} /> LinkedIn
+          <LinkedIn />
         </MenuItem>
       </Menu>
 
@@ -138,6 +219,8 @@ const App = () => {
           padding: 3,
           backdropFilter: "blur(20px)",
           boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
+          position: "relative", // Ensure container doesn’t overlap menu
+          zIndex: 1300, // Below menu’s z-index
         }}
       >
         <Typography
@@ -446,3 +529,12 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
