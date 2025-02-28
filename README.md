@@ -34,7 +34,7 @@
 
 ### 🔹 **1. Clone the Repository**  
 ```sh
-git clone https://github.com/yourusername/BargainBot.git
+git clone https://github.com/ashish6298/BargainBot.git
 cd BargainBot
 ```
 
