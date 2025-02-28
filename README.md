@@ -1,5 +1,3 @@
-Here’s the updated **classy and stylish README** for **Bargain Bot** with the **demo URL** included! 🚀  
-
 ---
 
 # 🚀 **Bargain Bot!**  
