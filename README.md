@@ -1,5 +1,3 @@
----
-
 # 🚀 **Bargain Bot!**  
 **_Real-time price comparison and analysis powered by AI & web scrapers._**  
 
