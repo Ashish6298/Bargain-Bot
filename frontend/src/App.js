@@ -1,543 +1,3 @@
-// // app.js
-
-// import React, { useState } from "react";
-// import axios from "axios";
-// import {
-//   Container,
-//   TextField,
-//   Button,
-//   Typography,
-//   Card,
-//   CardContent,
-//   Grid,
-//   CircularProgress,
-//   Box,
-//   useMediaQuery,
-//   IconButton,
-//   Menu,
-//   MenuItem,
-//   Avatar,
-//   Dialog,
-//   DialogTitle,
-//   DialogContent,
-//   Table,
-//   TableBody,
-//   TableCell,
-//   TableHead,
-//   TableRow,
-//   Link,
-// } from "@mui/material";
-// import { GitHub, LinkedIn, Info, History } from "@mui/icons-material";
-
-// const App = () => {
-//   const [query, setQuery] = useState("");
-//   const [prices, setPrices] = useState(null);
-//   const [loading, setLoading] = useState(false);
-//   const [anchorEl, setAnchorEl] = useState(null);
-//   const [historyDialogOpen, setHistoryDialogOpen] = useState(false);
-//   const [selectedStoreHistory, setSelectedStoreHistory] = useState(null);
-//   const isSmallScreen = useMediaQuery("(max-width:600px)");
-
-//   const handleSearch = async () => {
-//     if (!query) return;
-//     setLoading(true);
-//     setPrices(null);
-
-//     try {
-//       const response = await axios.get(
-//         `https://bargain-bot.onrender.com// Add a loading indicator for the price history dialog
-// <Dialog
-//   open={historyDialogOpen}
-//   onClose={handleHistoryClose}
-//   maxWidth="md"
-//   fullWidth
-// >
-//   <DialogTitle sx={{ bgcolor: "#1976D2", color: "#fff" }}>
-//     Price History
-//   </DialogTitle>
-//   <DialogContent>
-//     {selectedStoreHistory ? (
-//       <Table>
-//         <TableHead>
-//           <TableRow>
-//             <TableCell sx={{ fontWeight: "bold" }}>Date</TableCell>
-//             <TableCell sx={{ fontWeight: "bold" }}>Discounted Price</TableCell>
-//             <TableCell sx={{ fontWeight: "bold" }}>Original Price</TableCell>
-//             <TableCell sx={{ fontWeight: "bold" }}>Final Price</TableCell>
-//           </TableRow>
-//         </TableHead>
-//         <TableBody>
-//           {selectedStoreHistory.map((entry, index) => (
-//             <TableRow key={index}>
-//               <TableCell>{entry.date}</TableCell>
-//               <TableCell>{entry.discountedPrice}</TableCell>
-//               <TableCell>{entry.originalPrice}</TableCell>
-//               <TableCell>{entry.finalPrice}</TableCell>
-//             </TableRow>
-//           ))}
-//         </TableBody>
-//       </Table>
-//     ) : (
-//       <CircularProgress />
-//     )}
-//   </DialogContent>
-// </Dialog>
-
-// // Add a loading state for the price history dialog
-// const [historyLoading, setHistoryLoading] = useState(false);
-
-// // Update the handleHistoryOpen function to set the loading state
-// const handleHistoryOpen = (store) => {
-//   setHistoryLoading(true);
-//   setSelectedStoreHistory(prices[store].priceHistory);
-//   setHistoryDialogOpen(true);
-//   setTimeout(() => {
-//     setHistoryLoading(false);
-//   }, 1000);
-// };
-
-// // Update the handleHistoryClose function to reset the loading state
-// const handleHistoryClose = () => {
-//   setHistoryDialogOpen(false);
-//   setSelectedStoreHistory(null);
-//   setHistoryLoading(false);
-// };/api/compare?query=${query}`
-//       );
-//       setPrices(response.data.prices);
-//     } catch (error) {
-//       console.error("Error fetching prices:", error);
-//     }
-//     setLoading(false);
-//   };
-
-//   const handleMenuOpen = (event) => {
-//     setAnchorEl(event.currentTarget);
-//   };
-
-//   const handleMenuClose = () => {
-//     setAnchorEl(null);
-//   };
-
-//   const handleHistoryOpen = (store) => {
-//     setSelectedStoreHistory(prices[store].priceHistory);
-//     setHistoryDialogOpen(true);
-//   };
-
-//   const handleHistoryClose = () => {
-//     setHistoryDialogOpen(false);
-//     setSelectedStoreHistory(null);
-//   };
-
-//   const getLowestPriceStore = () => {
-//     if (!prices) return null;
-//     const stores = Object.keys(prices);
-//     return stores.reduce((minStore, store) => {
-//       const currentPrice = parseFloat(prices[store].currentPrice.finalPrice.replace("₹", ""));
-//       const minPrice = parseFloat(prices[minStore].currentPrice.finalPrice.replace("₹", ""));
-//       return currentPrice < minPrice ? store : minStore;
-//     }, stores[0]);
-//   };
-
-//   const lowestPriceStore = prices ? getLowestPriceStore() : null;
-
-//   return (
-//     <Box
-//       sx={{
-//         minHeight: "100vh",
-//         display: "flex",
-//         justifyContent: "center",
-//         alignItems: "center",
-//         padding: 3,
-//         background: "linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%)",
-//       }}
-//     >
-//       <IconButton
-//         sx={{ position: "absolute", top: 10, right: 10 }}
-//         onClick={handleMenuOpen}
-//       >
-//         <Info fontSize="large" />
-//       </IconButton>
-//       <Menu
-//         anchorEl={anchorEl}
-//         open={Boolean(anchorEl)}
-//         onClose={handleMenuClose}
-//         anchorOrigin={{
-//           vertical: "bottom", // Expand downward
-//           horizontal: "center", // Anchor to center of the icon
-//         }}
-//         transformOrigin={{
-//           vertical: "top",
-//           horizontal: "center", // Open centered below the icon
-//         }}
-//         sx={{
-//           "& .MuiPaper-root": {
-//             width: "60px",
-//             bgcolor: "rgba(255, 255, 255, 0.9)",
-//             borderRadius: "8px",
-//             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-//             display: "flex",
-//             flexDirection: "column",
-//             alignItems: "center",
-//             padding: 0,
-//             zIndex: 1301, // Higher than default (1300) to stay above content
-//           },
-//           "& .MuiMenu-list": {
-//             padding: 0,
-//           },
-//         }}
-//         disableScrollLock // Prevents body scroll locking, which can help with responsiveness
-//       >
-//         <MenuItem sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}>
-//           <Avatar
-//             src="/assets/ashish.jpg"
-//             sx={{ width: 40, height: 40 }}
-//           />
-//         </MenuItem>
-//         <MenuItem
-//           component="a"
-//           href="https://github.com/ashish6298"
-//           target="_blank"
-//           sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}
-//         >
-//           <GitHub />
-//         </MenuItem>
-//         <MenuItem
-//           component="a"
-//           href="https://www.linkedin.com/in/ashish-goswami-58797a24a/"
-//           target="_blank"
-//           sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}
-//         >
-//           <LinkedIn />
-//         </MenuItem>
-//       </Menu>
-
-//       <Container
-//         maxWidth="lg"
-//         sx={{
-//           bgcolor: "rgba(255, 255, 255, 0.15)",
-//           borderRadius: 2,
-//           padding: 3,
-//           backdropFilter: "blur(20px)",
-//           boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
-//           position: "relative", // Ensure container doesn’t overlap menu
-//           zIndex: 1300, // Below menu’s z-index
-//         }}
-//       >
-//         <Typography
-//           variant={isSmallScreen ? "h5" : "h4"}
-//           align="center"
-//           gutterBottom
-//           sx={{
-//             fontWeight: "bold",
-//             color: "#000",
-//             textShadow: "0 0 10px rgba(0,0,0,0.3)",
-//             fontFamily: "'Poppins', sans-serif",
-//             letterSpacing: "1px",
-//           }}
-//         >
-//           🤖 Bargain Bot !
-//         </Typography>
-
-//         <Box display="flex" flexDirection="column" alignItems="center">
-//           <TextField
-//             fullWidth
-//             label="Search for the Best Price"
-//             variant="outlined"
-//             value={query}
-//             onChange={(e) => setQuery(e.target.value)}
-//             sx={{
-//               mb: 2,
-//               maxWidth: "600px",
-//               bgcolor: "rgba(255, 255, 255, 0.7)",
-//               borderRadius: 2,
-//               "& input": {
-//                 color: "#000",
-//                 fontFamily: "'Poppins', sans-serif",
-//                 fontWeight: "500",
-//               },
-//               "& .MuiOutlinedInput-root": {
-//                 "& fieldset": { borderColor: "rgba(0, 0, 0, 0.4)" },
-//                 "&:hover fieldset": { borderColor: "#2196F3" },
-//                 "&.Mui-focused fieldset": { borderColor: "#1976D2" },
-//               },
-//             }}
-//             InputLabelProps={{
-//               style: {
-//                 color: "#333",
-//                 fontFamily: "'Poppins', sans-serif",
-//                 fontWeight: "500",
-//               },
-//             }}
-//           />
-
-//           <Button
-//             variant="contained"
-//             fullWidth
-//             onClick={handleSearch}
-//             disabled={loading}
-//             sx={{
-//               maxWidth: "600px",
-//               height: "50px",
-//               fontSize: "1.1rem",
-//               fontWeight: "bold",
-//               fontFamily: "'Poppins', sans-serif",
-//               bgcolor: "#2196F3",
-//               color: "#fff",
-//               borderRadius: 2,
-//               textTransform: "uppercase",
-//               transition: "all 0.3s ease-in-out",
-//               boxShadow: "0px 4px 15px rgba(33, 150, 243, 0.4)",
-//               "&:hover": {
-//                 bgcolor: "#1976D2",
-//                 transform: "scale(1.05)",
-//                 boxShadow: "0px 6px 20px rgba(25, 118, 210, 0.6)",
-//               },
-//             }}
-//           >
-//             {loading ? (
-//               <CircularProgress size={24} color="inherit" />
-//             ) : (
-//               "COMPARE PRICES"
-//             )}
-//           </Button>
-//         </Box>
-
-//         {loading && (
-//           <Typography
-//             align="center"
-//             sx={{
-//               color: "black",
-//               fontSize: "1.2rem",
-//               mt: 2,
-//             }}
-//           >
-//             🔍 We are searching for the best deals for you...!
-//           </Typography>
-//         )}
-//         {prices && (
-//           <Grid
-//             container
-//             spacing={2}
-//             sx={{
-//               mt: 3,
-//               maxWidth: "100%",
-//               mx: "auto",
-//               justifyContent: "center",
-//               flexWrap: "wrap",
-//             }}
-//           >
-//             {Object.keys(prices).map((store) => (
-//               <Grid item xs={12} sm={6} md={4} lg={3} key={store}>
-//                 <Card
-//                   sx={{
-//                     bgcolor: store === lowestPriceStore ? "rgba(0, 255, 0, 0.1)" : "rgba(255, 255, 255, 0.9)",
-//                     border: store === lowestPriceStore ? "2px solid #4CAF50" : "none",
-//                     borderRadius: 3,
-//                     padding: 2,
-//                     transition: "all 0.3s ease-in-out",
-//                     boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.4)",
-//                     "&:hover": {
-//                       transform: "scale(1.05)",
-//                       boxShadow: "0px 12px 30px rgba(0, 0, 0, 0.6)",
-//                     },
-//                   }}
-//                 >
-//                   <CardContent>
-//                     <Typography
-//                       variant="h6"
-//                       sx={{
-//                         color: "#D32F2F",
-//                         fontWeight: "bold",
-//                         textAlign: "center",
-//                       }}
-//                     >
-//                       {store}
-//                     </Typography>
-
-//                     <Grid container spacing={1} sx={{ mt: 1 }}>
-//                       <Grid
-//                         item
-//                         xs={12}
-//                         sx={{
-//                           display: "flex",
-//                           justifyContent: "space-between",
-//                         }}
-//                       >
-//                         <Typography
-//                           variant="body1"
-//                           sx={{ fontWeight: "bold", color: "#333" }}
-//                         >
-//                           Discounted Price:
-//                         </Typography>
-//                         <Typography
-//                           variant="body1"
-//                           sx={{ fontWeight: "bold", color: "#D32F2F" }}
-//                         >
-//                           {prices[store].currentPrice.discountedPrice}
-//                         </Typography>
-//                       </Grid>
-
-//                       <Grid
-//                         item
-//                         xs={12}
-//                         sx={{
-//                           display: "flex",
-//                           justifyContent: "space-between",
-//                         }}
-//                       >
-//                         <Typography
-//                           variant="body1"
-//                           sx={{ fontWeight: "bold", color: "#333" }}
-//                         >
-//                           Original Price:
-//                         </Typography>
-//                         <Typography variant="body1">
-//                           {prices[store].currentPrice.originalPrice}
-//                         </Typography>
-//                       </Grid>
-
-//                       <Grid
-//                         item
-//                         xs={12}
-//                         sx={{
-//                           display: "flex",
-//                           justifyContent: "space-between",
-//                         }}
-//                       >
-//                         <Typography
-//                           variant="body1"
-//                           sx={{ fontWeight: "bold", color: "#333" }}
-//                         >
-//                           Discount:
-//                         </Typography>
-//                         <Typography variant="body1">
-//                           {prices[store].currentPrice.discount}
-//                         </Typography>
-//                       </Grid>
-
-//                       <Grid
-//                         item
-//                         xs={12}
-//                         sx={{
-//                           display: "flex",
-//                           alignItems: "center",
-//                           justifyContent: "space-between",
-//                           mt: 1,
-//                           p: 1,
-//                           bgcolor: "rgba(0, 200, 0, 0.3)",
-//                           borderRadius: 1,
-//                         }}
-//                       >
-//                         <Typography
-//                           variant="h6"
-//                           sx={{ fontWeight: "bold", color: "#2E7D32" }}
-//                         >
-//                           Final Price:
-//                         </Typography>
-//                         <Typography
-//                           variant="h6"
-//                           sx={{ fontWeight: "bold", color: "green" }}
-//                         >
-//                           {prices[store].currentPrice.finalPrice}
-//                         </Typography>
-//                       </Grid>
-
-//                       <Grid item xs={12} sx={{ textAlign: "center", mt: 2 }}>
-//                         <Link
-//                           href={prices[store].currentPrice.productLink}
-//                           target="_blank"
-//                           rel="noopener noreferrer"
-//                           sx={{
-//                             fontFamily: "'Poppins', sans-serif",
-//                             color: "#1976D2",
-//                             textDecoration: "none",
-//                             fontWeight: "bold",
-//                             "&:hover": {
-//                               color: "#D32F2F",
-//                               textDecoration: "underline",
-//                             },
-//                           }}
-//                         >
-//                           Visit Product Page
-//                         </Link>
-//                       </Grid>
-
-//                       <Grid item xs={12} sx={{ textAlign: "center", mt: 2 }}>
-//                         <Button
-//                           variant="outlined"
-//                           startIcon={<History />}
-//                           onClick={() => handleHistoryOpen(store)}
-//                           sx={{
-//                             fontFamily: "'Poppins', sans-serif",
-//                             color: "#1976D2",
-//                             borderColor: "#1976D2",
-//                             "&:hover": {
-//                               bgcolor: "#1976D2",
-//                               color: "#fff",
-//                               borderColor: "#1976D2",
-//                             },
-//                           }}
-//                         >
-//                           Price History
-//                         </Button>
-//                       </Grid>
-//                     </Grid>
-//                   </CardContent>
-//                 </Card>
-//               </Grid>
-//             ))}
-//           </Grid>
-//         )}
-
-//         <Dialog
-//           open={historyDialogOpen}
-//           onClose={handleHistoryClose}
-//           maxWidth="md"
-//           fullWidth
-//         >
-//           <DialogTitle sx={{ bgcolor: "#1976D2", color: "#fff" }}>
-//             Price History
-//           </DialogTitle>
-//           <DialogContent>
-//             {selectedStoreHistory && (
-//               <Table>
-//                 <TableHead>
-//                   <TableRow>
-//                     <TableCell sx={{ fontWeight: "bold" }}>Date</TableCell>
-//                     <TableCell sx={{ fontWeight: "bold" }}>Discounted Price</TableCell>
-//                     <TableCell sx={{ fontWeight: "bold" }}>Original Price</TableCell>
-//                     <TableCell sx={{ fontWeight: "bold" }}>Final Price</TableCell>
-//                   </TableRow>
-//                 </TableHead>
-//                 <TableBody>
-//                   {selectedStoreHistory.map((entry, index) => (
-//                     <TableRow key={index}>
-//                       <TableCell>{entry.date}</TableCell>
-//                       <TableCell>{entry.discountedPrice}</TableCell>
-//                       <TableCell>{entry.originalPrice}</TableCell>
-//                       <TableCell>{entry.finalPrice}</TableCell>
-//                     </TableRow>
-//                   ))}
-//                 </TableBody>
-//               </Table>
-//             )}
-//           </DialogContent>
-//         </Dialog>
-//       </Container>
-//     </Box>
-//   );
-// };
-
-// export default App;
-
-
-
-
-
-
-
-// app.js
-
 import React, { useState } from "react";
 import axios from "axios";
 import {
@@ -580,7 +40,6 @@ const App = () => {
     if (!query) return;
     setLoading(true);
     setPrices(null);
-
     try {
       const response = await axios.get(
         `https://bargain-bot.onrender.com/api/compare?query=${query}`
@@ -592,19 +51,12 @@ const App = () => {
     setLoading(false);
   };
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
+  const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
+  const handleMenuClose = () => setAnchorEl(null);
   const handleHistoryOpen = (store) => {
     setSelectedStoreHistory(prices[store].priceHistory);
     setHistoryDialogOpen(true);
   };
-
   const handleHistoryClose = () => {
     setHistoryDialogOpen(false);
     setSelectedStoreHistory(null);
@@ -630,65 +82,73 @@ const App = () => {
         justifyContent: "center",
         alignItems: "center",
         padding: 3,
-        background: "linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%)",
+        background: "linear-gradient(135deg, #0A0E1A 0%, #1E2A47 100%)", // Deep cyberpunk gradient
+        overflow: "hidden",
+        position: "relative",
       }}
     >
+      {/* Simplified Background Effect */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)",
+          animation: "fadePulse 6s infinite ease-in-out",
+          zIndex: 0,
+        }}
+      />
+
       <IconButton
-        sx={{ position: "absolute", top: 10, right: 10 }}
+        sx={{
+          position: "absolute",
+          top: 20,
+          right: 20,
+          color: "#00FFFF",
+          filter: "drop-shadow(0 0 10px #00FFFF)",
+          "&:hover": { color: "#FF00FF", transform: "scale(1.1)", transition: "all 0.3s" },
+        }}
         onClick={handleMenuOpen}
       >
         <Info fontSize="large" />
       </IconButton>
+
       <Menu
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleMenuClose}
-        anchorOrigin={{
-          vertical: "bottom", // Expand downward
-          horizontal: "center", // Anchor to center of the icon
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "center", // Open centered below the icon
-        }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
         sx={{
           "& .MuiPaper-root": {
-            width: "60px",
-            bgcolor: "rgba(255, 255, 255, 0.9)",
-            borderRadius: "8px",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            width: "80px",
+            bgcolor: "rgba(10, 14, 26, 0.9)",
+            borderRadius: "15px",
+            border: "2px solid #00FFFF",
+            boxShadow: "0 0 25px rgba(0, 255, 255, 0.7)",
             padding: 0,
-            zIndex: 1301, // Higher than default (1300) to stay above content
+            zIndex: 1301,
+            animation: "slideIn 0.5s ease",
           },
-          "& .MuiMenu-list": {
-            padding: 0,
+          "& .MuiMenuItem-root": {
+            justifyContent: "center",
+            color: "#00FFFF",
+            "&:hover": { bgcolor: "#FF00FF", color: "#fff" },
           },
         }}
-        disableScrollLock // Prevents body scroll locking, which can help with responsiveness
       >
-        <MenuItem sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}>
+        <MenuItem>
           <Avatar
             src="/assets/ashish.jpg"
-            sx={{ width: 40, height: 40 }}
+            sx={{ width: 50, height: 50, border: "2px solid #00FFFF", filter: "drop-shadow(0 0 5px #00FFFF)" }}
           />
         </MenuItem>
-        <MenuItem
-          component="a"
-          href="https://github.com/ashish6298"
-          target="_blank"
-          sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}
-        >
+        <MenuItem component="a" href="https://github.com/ashish6298" target="_blank">
           <GitHub />
         </MenuItem>
-        <MenuItem
-          component="a"
-          href="https://www.linkedin.com/in/ashish-goswami-58797a24a/"
-          target="_blank"
-          sx={{ justifyContent: "center", padding: "8px 0", minHeight: "auto" }}
-        >
+        <MenuItem component="a" href="https://www.linkedin.com/in/ashish-goswami-58797a24a/" target="_blank">
           <LinkedIn />
         </MenuItem>
       </Menu>
@@ -696,13 +156,13 @@ const App = () => {
       <Container
         maxWidth="lg"
         sx={{
-          bgcolor: "rgba(255, 255, 255, 0.15)",
-          borderRadius: 2,
-          padding: 3,
+          bgcolor: "rgba(10, 14, 26, 0.7)",
+          borderRadius: "25px",
+          padding: 4,
           backdropFilter: "blur(20px)",
-          boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
-          position: "relative", // Ensure container doesn’t overlap menu
-          zIndex: 1300, // Below menu’s z-index
+          border: "2px solid rgba(0, 255, 255, 0.5)",
+          boxShadow: "0 0 40px rgba(0, 255, 255, 0.4)",
+          zIndex: 1300,
         }}
       >
         <Typography
@@ -711,44 +171,37 @@ const App = () => {
           gutterBottom
           sx={{
             fontWeight: "bold",
-            color: "#000",
-            textShadow: "0 0 10px rgba(0,0,0,0.3)",
-            fontFamily: "'Poppins', sans-serif",
-            letterSpacing: "1px",
+            color: "#00FFFF",
+            textShadow: "0 0 20px rgba(0, 255, 255, 0.8)",
+            fontFamily: "'Exo 2', sans-serif",
+            letterSpacing: "3px",
+            animation: "glowFade 3s infinite",
           }}
         >
-          🤖 Bargain Bot !
+          🤖 BARGAIN BOT
         </Typography>
 
         <Box display="flex" flexDirection="column" alignItems="center">
           <TextField
             fullWidth
-            label="Search for the Best Price"
+            label="Search for Cosmic Deals"
             variant="outlined"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             sx={{
-              mb: 2,
+              mb: 3,
               maxWidth: "600px",
-              bgcolor: "rgba(255, 255, 255, 0.7)",
-              borderRadius: 2,
-              "& input": {
-                color: "#000",
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: "500",
-              },
+              bgcolor: "rgba(0, 255, 255, 0.05)",
+              borderRadius: "15px",
+              "& input": { color: "#fff", fontFamily: "'Exo 2', sans-serif" },
               "& .MuiOutlinedInput-root": {
-                "& fieldset": { borderColor: "rgba(0, 0, 0, 0.4)" },
-                "&:hover fieldset": { borderColor: "#2196F3" },
-                "&.Mui-focused fieldset": { borderColor: "#1976D2" },
+                "& fieldset": { borderColor: "#00FFFF", borderWidth: "2px" },
+                "&:hover fieldset": { borderColor: "#FF00FF", boxShadow: "0 0 15px #FF00FF" },
+                "&.Mui-focused fieldset": { borderColor: "#00FFFF", boxShadow: "0 0 20px #00FFFF" },
               },
             }}
             InputLabelProps={{
-              style: {
-                color: "#333",
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: "500",
-              },
+              style: { color: "#00FFFF", fontFamily: "'Exo 2', sans-serif", textShadow: "0 0 5px #00FFFF" },
             }}
           />
 
@@ -759,27 +212,27 @@ const App = () => {
             disabled={loading}
             sx={{
               maxWidth: "600px",
-              height: "50px",
-              fontSize: "1.1rem",
+              height: "55px",
+              fontSize: "1.3rem",
               fontWeight: "bold",
-              fontFamily: "'Poppins', sans-serif",
-              bgcolor: "#2196F3",
+              fontFamily: "'Exo 2', sans-serif",
+              background: "linear-gradient(45deg, #00FFFF, #FF00FF, #00FFAA)",
               color: "#fff",
-              borderRadius: 2,
+              borderRadius: "15px",
               textTransform: "uppercase",
-              transition: "all 0.3s ease-in-out",
-              boxShadow: "0px 4px 15px rgba(33, 150, 243, 0.4)",
+              boxShadow: "0 0 30px rgba(0, 255, 255, 0.7)",
               "&:hover": {
-                bgcolor: "#1976D2",
+                background: "linear-gradient(45deg, #FF00FF, #00FFFF, #FF00AA)",
                 transform: "scale(1.05)",
-                boxShadow: "0px 6px 20px rgba(25, 118, 210, 0.6)",
+                boxShadow: "0 0 40px rgba(255, 0, 255, 0.9)",
+                transition: "all 0.3s",
               },
             }}
           >
             {loading ? (
-              <CircularProgress size={24} color="inherit" />
+              <CircularProgress size={24} sx={{ color: "#FF00FF" }} />
             ) : (
-              "COMPARE PRICES"
+              "LAUNCH SEARCH"
             )}
           </Button>
         </Box>
@@ -788,39 +241,38 @@ const App = () => {
           <Typography
             align="center"
             sx={{
-              color: "black",
-              fontSize: "1.2rem",
+              color: "#00FFFF",
+              fontSize: "1.3rem",
               mt: 2,
+              textShadow: "0 0 15px rgba(0, 255, 255, 0.7)",
+              fontFamily: "'Exo 2', sans-serif",
+              animation: "fadeInOut 2s infinite",
             }}
           >
-            🔍 We are searching for the best deals for you...!
+            🔍 SCANNING THE GRID...
           </Typography>
         )}
+
         {prices && (
-          <Grid
-            container
-            spacing={2}
-            sx={{
-              mt: 3,
-              maxWidth: "100%",
-              mx: "auto",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          <Grid container spacing={3} sx={{ mt: 4, justifyContent: "center" }}>
             {Object.keys(prices).map((store) => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={store}>
                 <Card
                   sx={{
-                    bgcolor: store === lowestPriceStore ? "rgba(0, 255, 0, 0.1)" : "rgba(255, 255, 255, 0.9)",
-                    border: store === lowestPriceStore ? "2px solid #4CAF50" : "none",
-                    borderRadius: 3,
+                    bgcolor: store === lowestPriceStore ? "rgba(0, 255, 170, 0.1)" : "rgba(10, 14, 26, 0.8)",
+                    border: store === lowestPriceStore ? "3px solid #00FFAA" : "2px solid #00FFFF",
+                    borderRadius: "20px",
                     padding: 2,
-                    transition: "all 0.3s ease-in-out",
-                    boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.4)",
+                    boxShadow: store === lowestPriceStore
+                      ? "0 0 30px rgba(0, 255, 170, 0.7)"
+                      : "0 0 30px rgba(0, 255, 255, 0.5)",
+                    transition: "all 0.4s",
+                    animation: store === lowestPriceStore ? "glowPulse 1s infinite" : "none",
                     "&:hover": {
-                      transform: "scale(1.05)",
-                      boxShadow: "0px 12px 30px rgba(0, 0, 0, 0.6)",
+                      transform: "translateY(-10px)",
+                      boxShadow: store === lowestPriceStore
+                        ? "0 0 50px rgba(0, 255, 170, 0.9)"
+                        : "0 0 50px rgba(0, 255, 255, 0.8)",
                     },
                   }}
                 >
@@ -828,75 +280,31 @@ const App = () => {
                     <Typography
                       variant="h6"
                       sx={{
-                        color: "#D32F2F",
+                        color: "#FF00FF",
                         fontWeight: "bold",
                         textAlign: "center",
+                        fontFamily: "'Exo 2', sans-serif",
+                        textShadow: "0 0 15px rgba(255, 0, 255, 0.7)",
                       }}
                     >
                       {store}
                     </Typography>
 
                     <Grid container spacing={1} sx={{ mt: 1 }}>
-                      <Grid
-                        item
-                        xs={12}
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography
-                          variant="body1"
-                          sx={{ fontWeight: "bold", color: "#333" }}
-                        >
-                          Discounted Price:
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          sx={{ fontWeight: "bold", color: "#D32F2F" }}
-                        >
+                      <Grid item xs={12} sx={{ display: "flex", justifyContent: "space-between" }}>
+                        <Typography sx={{ fontWeight: "bold", color: "#fff" }}>Discounted:</Typography>
+                        <Typography sx={{ fontWeight: "bold", color: "#00FFFF" }}>
                           {prices[store].currentPrice.discountedPrice}
                         </Typography>
                       </Grid>
-
-                      <Grid
-                        item
-                        xs={12}
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography
-                          variant="body1"
-                          sx={{ fontWeight: "bold", color: "#333" }}
-                        >
-                          Original Price:
-                        </Typography>
-                        <Typography variant="body1">
-                          {prices[store].currentPrice.originalPrice}
-                        </Typography>
+                      <Grid item xs={12} sx={{ display: "flex", justifyContent: "space-between" }}>
+                        <Typography sx={{ fontWeight: "bold", color: "#fff" }}>Original:</Typography>
+                        <Typography sx={{ color: "#fff" }}>{prices[store].currentPrice.originalPrice}</Typography>
                       </Grid>
-
-                      <Grid
-                        item
-                        xs={12}
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography
-                          variant="body1"
-                          sx={{ fontWeight: "bold", color: "#333" }}
-                        >
-                          Discount:
-                        </Typography>
-                        <Typography variant="body1">
-                          {prices[store].currentPrice.discount}
-                        </Typography>
+                      <Grid item xs={12} sx={{ display: "flex", justifyContent: "space-between" }}>
+                        <Typography sx={{ fontWeight: "bold", color: "#fff" }}>Discount:</Typography>
+                        <Typography sx={{ color: "#fff" }}>{prices[store].currentPrice.discount}</Typography>
                       </Grid>
-
                       <Grid
                         item
                         xs={12}
@@ -906,61 +314,50 @@ const App = () => {
                           justifyContent: "space-between",
                           mt: 1,
                           p: 1,
-                          bgcolor: "rgba(0, 200, 0, 0.3)",
-                          borderRadius: 1,
+                          bgcolor: "rgba(0, 255, 170, 0.2)",
+                          borderRadius: "10px",
+                          boxShadow: "0 0 10px rgba(0, 255, 170, 0.5)",
                         }}
                       >
-                        <Typography
-                          variant="h6"
-                          sx={{ fontWeight: "bold", color: "#2E7D32" }}
-                        >
-                          Final Price:
-                        </Typography>
-                        <Typography
-                          variant="h6"
-                          sx={{ fontWeight: "bold", color: "green" }}
-                        >
+                        <Typography sx={{ fontWeight: "bold", color: "#fff" }}>Final Price:</Typography>
+                        <Typography sx={{ fontWeight: "bold", color: "#00FFAA" }}>
                           {prices[store].currentPrice.finalPrice}
                         </Typography>
                       </Grid>
-
                       <Grid item xs={12} sx={{ textAlign: "center", mt: 2 }}>
                         <Link
                           href={prices[store].currentPrice.productLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           sx={{
-                            fontFamily: "'Poppins', sans-serif",
-                            color: "#1976D2",
+                            color: "#00FFFF",
                             textDecoration: "none",
                             fontWeight: "bold",
-                            "&:hover": {
-                              color: "#D32F2F",
-                              textDecoration: "underline",
-                            },
+                            fontFamily: "'Exo 2', sans-serif",
+                            "&:hover": { color: "#FF00FF", textShadow: "0 0 10px #FF00FF" },
                           }}
                         >
-                          Visit Product Page
+                          ACCESS PORTAL
                         </Link>
                       </Grid>
-
                       <Grid item xs={12} sx={{ textAlign: "center", mt: 2 }}>
                         <Button
                           variant="outlined"
                           startIcon={<History />}
                           onClick={() => handleHistoryOpen(store)}
                           sx={{
-                            fontFamily: "'Poppins', sans-serif",
-                            color: "#1976D2",
-                            borderColor: "#1976D2",
+                            color: "#00FFFF",
+                            borderColor: "#00FFFF",
+                            fontFamily: "'Exo 2', sans-serif",
                             "&:hover": {
-                              bgcolor: "#1976D2",
-                              color: "#fff",
-                              borderColor: "#1976D2",
+                              bgcolor: "#00FFFF",
+                              color: "#0A0E1A",
+                              borderColor: "#00FFFF",
+                              boxShadow: "0 0 15px #00FFFF",
                             },
                           }}
                         >
-                          Price History
+                          TIME DATA
                         </Button>
                       </Grid>
                     </Grid>
@@ -976,28 +373,54 @@ const App = () => {
           onClose={handleHistoryClose}
           maxWidth="md"
           fullWidth
+          sx={{
+            "& .MuiDialog-paper": {
+              bgcolor: "rgba(10, 14, 26, 0.9)",
+              border: "2px solid #00FFFF",
+              boxShadow: "0 0 40px rgba(0, 255, 255, 0.6)",
+              borderRadius: "20px",
+              animation: "slideUp 0.6s ease",
+            },
+          }}
         >
-          <DialogTitle sx={{ bgcolor: "#1976D2", color: "#fff" }}>
-            Price History
+          <DialogTitle
+            sx={{
+              bgcolor: "linear-gradient(45deg, #00FFFF, #FF00FF)",
+              color: "#fff",
+              fontFamily: "'Exo 2', sans-serif",
+              textShadow: "0 0 15px rgba(0, 255, 255, 0.7)",
+            }}
+          >
+            TIME ARCHIVES
           </DialogTitle>
           <DialogContent>
             {selectedStoreHistory && (
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell sx={{ fontWeight: "bold" }}>Date</TableCell>
-                    <TableCell sx={{ fontWeight: "bold" }}>Discounted Price</TableCell>
-                    <TableCell sx={{ fontWeight: "bold" }}>Original Price</TableCell>
-                    <TableCell sx={{ fontWeight: "bold" }}>Final Price</TableCell>
+                    <TableCell sx={{ fontWeight: "bold", color: "#00FFFF", textShadow: "0 0 5px #00FFFF" }}>
+                      Date
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: "bold", color: "#00FFFF", textShadow: "0 0 5px #00FFFF" }}>
+                      Discounted
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: "bold", color: "#00FFFF", textShadow: "0 0 5px #00FFFF" }}>
+                      Original
+                    </TableCell>
+                    <TableCell sx={{ fontWeight: "bold", color: "#00FFFF", textShadow: "0 0 5px #00FFFF" }}>
+                      Final
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {selectedStoreHistory.map((entry, index) => (
                     <TableRow key={index}>
-                      <TableCell>{entry.date}</TableCell>
-                      <TableCell>{entry.discountedPrice}</TableCell>
-                      <TableCell>{entry.originalPrice}</TableCell>
-                      <TableCell>{entry.finalPrice}</TableCell>
+                      <TableCell sx={{ color: "#fff" }}>{entry.date}</TableCell>
+                      <TableCell sx={{ color: "#fff" }}>{entry.discountedPrice}</TableCell>
+                      <TableCell sx={{ color: "#fff" }}>{entry.originalPrice}</TableCell>
+                      <TableCell sx={{ color: "#00FFAA", textShadow: "0 0 5px #00FFAA" }}>
+                        {entry.finalPrice}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -1006,9 +429,42 @@ const App = () => {
           </DialogContent>
         </Dialog>
       </Container>
+
+      {/* Updated Animations */}
+      <style>
+        {`
+          @keyframes fadePulse {
+            0% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(1.1); }
+            100% { opacity: 0.15; transform: scale(1); }
+          }
+          @keyframes glowFade {
+            0% { text-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+            50% { text-shadow: 0 0 30px rgba(0, 255, 255, 1); }
+            100% { text-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+          }
+          @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(5px); }
+            50% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-5px); }
+          }
+          @keyframes slideIn {
+            0% { transform: translateY(-20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+          }
+          @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+          }
+          @keyframes glowPulse {
+            0% { box-shadow: 0 0 30px rgba(0, 255, 170, 0.7); }
+            50% { box-shadow: 0 0 50px rgba(0, 255, 170, 1); }
+            100% { box-shadow: 0 0 30px rgba(0, 255, 170, 0.7); }
+          }
+        `}
+      </style>
     </Box>
   );
 };
 
 export default App;
-
